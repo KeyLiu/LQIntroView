@@ -18,30 +18,30 @@
 - 4.通过`showInView:(UIView *)view animateDuration:(CGFloat)duration`将其添加到当前view上
 
 
-    @property (nonatomic, strong) LQIntroView       *intro;
+     @property (nonatomic, strong) LQIntroView       *intro;
 
-    - (void)showCustomIntro {
-        LQIntroPage *page1 = [LQIntroPage page];
-        page1.bgImage = [UIImage imageNamed:@"欢迎页1"];
+        - (void)showCustomIntro {
+         LQIntroPage *page1 = [LQIntroPage page];
+         page1.bgImage = [UIImage imageNamed:@"欢迎页1"];
     
-        LQIntroPage *page2 = [LQIntroPage page];
-        page2.bgImage = [UIImage imageNamed:@"欢迎页2"];
+         LQIntroPage *page2 = [LQIntroPage page];
+         page2.bgImage = [UIImage imageNamed:@"欢迎页2"];
     
-        LQIntroPage *page3 = [LQIntroPage page];
-        page3.bgImage = [UIImage imageNamed:@"欢迎页3"];
+         LQIntroPage *page3 = [LQIntroPage page];
+         page3.bgImage = [UIImage imageNamed:@"欢迎页3"];
     
-        _intro = [[LQIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3]];
+            _intro = [[LQIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3]];
     
-        [_intro setDelegate:self];
-        [_intro showInView:self.view animateDuration:0.0];
-    }
+         [_intro setDelegate:self];
+          [_intro showInView:self.view animateDuration:0.0];
+      }
 
 - 5.调用方法，通过`[[LQIntroPageManager sharedInstance] disPlayTheIntroPage]`判断是否执行
 
 
-    if ([[LQIntroPageManager sharedInstance] disPlayTheIntroPage]) {
-        [self showCustomIntro];
-    }
+        if ([[LQIntroPageManager sharedInstance] disPlayTheIntroPage]) {
+           [self showCustomIntro];
+        }
 
 ##主要方法
 
